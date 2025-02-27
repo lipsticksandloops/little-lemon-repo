@@ -1,0 +1,227 @@
+/* Import Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Markazi+Text:wght@400;500&family=Karla:wght@400;500;700&display=swap');
+
+/* Global Styles */
+body {
+  font-family: 'Karla', sans-serif;
+  color: #333333;
+  background-color: #EDEFEE;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2 {
+  font-family: 'Markazi Text', serif;
+  color: #495E57;
+}
+
+h1 {
+  font-size: 64pt;
+  font-weight: 500;
+}
+
+h2 {
+  font-size: 40pt;
+  font-weight: 400;
+}
+
+.lead-text {
+  font-family: 'Karla', sans-serif;
+  font-size: 18pt;
+  font-weight: 500;
+}
+
+.section-title {
+  font-family: 'Karla', sans-serif;
+  font-size: 20pt;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.card-title {
+  font-family: 'Karla', sans-serif;
+  font-size: 18pt;
+  font-weight: 700;
+}
+
+.paragraph-text {
+  font-family: 'Karla', sans-serif;
+  font-size: 16pt;
+  line-height: 1.5;
+  max-width: 65ch;
+}
+
+.highlight-text {
+  font-family: 'Karla', sans-serif;
+  font-size: 16pt;
+  font-weight: 500;
+}
+
+/* General Form Styling */
+form {
+  max-width: 100%; /* Ensure the form doesn't exceed the screen width */
+  padding: 15px; /* Add padding for better spacing */
+  box-sizing: border-box; /* Include padding in the width calculation */
+  background-color: #EDEFEE; /* Background color from UI kit */
+  border-radius: 8px; /* Consistent border radius */
+}
+
+/* Input and Label Styling */
+label {
+  display: block; /* Ensure labels are on their own line */
+  font-weight: bold;
+  margin-bottom: 5px;
+  font-family: 'Karla', sans-serif; /* Use Karla font for labels */
+  font-size: 16pt; /* Match paragraph text size */
+  color: #333333; /* Text color from UI kit */
+}
+
+input,
+select,
+textarea {
+  width: 100%; /* Make inputs take up the full width */
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px; /* Consistent border radius for inputs */
+  font-size: 16pt; /* Match paragraph text size */
+  font-family: 'Karla', sans-serif; /* Use Karla font for inputs */
+  box-sizing: border-box; /* Include padding in the width calculation */
+}
+
+textarea {
+  resize: vertical;
+  min-height: 100px; /* Minimum height for textarea */
+}
+
+/* Flexbox and Grid Layout Adjustments */
+.name-group,
+.email-group,
+.guests-occasion-group,
+.seating-time-group,
+.date-group,
+.special-requirements-group,
+.button-group {
+  display: flex;
+  flex-direction: column; /* Stack elements vertically by default */
+  gap: 15px; /* Add spacing between elements */
+  margin-bottom: 20px;
+}
+
+/* Email Group: Align email input and checkbox on the same row */
+.email-group {
+  display: flex;
+  align-items: flex-start; /* Align items to the start */
+  gap: 10px; /* Spacing between email input and checkbox */
+}
+
+.checkbox-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap; /* Prevent text from wrapping */
+}
+
+.checkbox-group label {
+  font-size: 16pt; /* Match paragraph text size */
+  font-weight: normal; /* Normal weight for checkbox label */
+}
+
+/* Guests Group: Align Adults and Children on the same row */
+.guests-group {
+  display: flex; /* Use flexbox for horizontal alignment */
+  flex-direction: row; /* Align items horizontally */
+  gap: 20px; /* Add spacing between Adults and Children inputs */
+}
+
+.guests-group > div {
+  flex: 1; /* Ensure both fields take equal width */
+}
+
+/* Date and Time Group: Align Date and Time on the same row */
+.date-time-group {
+  display: flex;
+  flex-direction: row;
+  gap: 20px; /* Add spacing between Date and Time inputs */
+}
+
+.date-time-group > div {
+  flex: 1; /* Ensure both fields take equal width */
+}
+
+/* Special Requirements Group */
+.special-requirements-group {
+  margin-bottom: 20px; /* Consistent spacing */
+}
+
+.special-requirements-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px; /* Consistent border radius */
+  font-size: 16pt; /* Match paragraph text size */
+  font-family: 'Karla', sans-serif; /* Use Karla font */
+  resize: vertical; /* Allow vertical resizing */
+}
+
+/* Button Group: Align buttons next to each other */
+.button-group {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between; /* Space out buttons */
+  gap: 20px;
+}
+
+.button-group button {
+  flex: 1; /* Buttons take equal width */
+  padding: 10px 20px;
+  font-size: 16pt; /* Match paragraph text size */
+  font-family: 'Karla', sans-serif; /* Use Karla font */
+  font-weight: 500; /* Medium weight for buttons */
+  border: none;
+  border-radius: 16px; /* Updated corner radius to 8px */
+  cursor: pointer;
+}
+
+.button-primary {
+  background-color: #F4CE14; /* Yellow for primary buttons */
+  color: #333333; /* Dark text for contrast */
+}
+
+.button-secondary {
+  background-color: #495E57; /* Green for secondary buttons */
+  color: white; /* White text for contrast */
+}
+
+.button-primary:hover,
+.button-secondary:hover {
+  opacity: 0.9; /* Slight hover effect */
+}
+
+/* Responsive Design for Mobile Devices */
+@media (max-width: 768px) {
+  /* Ensure all input groups stack vertically */
+  .name-group,
+  .guests-occasion-group,
+  .seating-time-group,
+  .date-time-group {
+    flex-direction: column;
+  }
+
+  /* Adjust spacing for better readability */
+  .name-group > div,
+  .guests-group > div,
+  .seating-time-group > div,
+  .date-time-group > div {
+    width: 100%; /* Ensure full width for child elements */
+  }
+
+  /* Make buttons full width on mobile */
+  .button-group {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .button-group button {
+    width: 100%; /* Full-width buttons */
+  }
+}

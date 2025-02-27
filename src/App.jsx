@@ -1,14 +1,17 @@
 import React from 'react';
+import Header from './components/Header';
+import Hero from './components/Hero';
 import ReservationForm from './components/ReservationForm';
+import Footer from './components/Footer';
 import './styles.css';
 
-function App() {
+export default function App() {
   return (
     <div>
-      <h1>Little Lemon</h1>
+      <Header />
+      <Hero />
       <ReservationForm />
+      <Footer />
     </div>
   );
 }
-
-export default App;

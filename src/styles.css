@@ -25,75 +25,210 @@ h2 {
   font-weight: 400;
 }
 
-.lead-text {
-  font-family: 'Karla', sans-serif;
-  font-size: 18pt;
-  font-weight: 500;
+/* Header Styles */
+.header {
+  background-color: #495E57;
+  color: white;
+  width: 100%;
+  margin: 0;
+  padding: 0;
 }
 
-.section-title {
+/* Row 1: Reserve a table CTA */
+.header-cta {
+  background-color: #495E57;
+  color: white;
+  text-align: center;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+
+.header-cta p {
   font-family: 'Karla', sans-serif;
-  font-size: 20pt;
-  font-weight: 800;
+  font-size: 12pt;
+  font-weight: normal;
+  margin: 0;
+}
+
+/* Row 2: Navigation bar */
+.nav-bar {
+  background-color: white;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.nav-bar ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 15px;
+  margin: 0;
+  width: 100%;
+  max-width: none;
+}
+
+.nav-bar ul li {
+  margin: 0 10px;
+}
+
+.nav-bar ul li img {
+  height: 40px;
+}
+
+/* Bootstrap icons */
+.nav-bar ul li i {
+  color: #495E57;
+  font-size: 24px;
+}
+
+.nav-bar ul li i:hover {
+  color: #F4CE14;
+}
+
+/* Footer Styles */
+.footer {
+  background-color: #495E57;
+  color: white;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 100%;
+  margin: 0;
+  padding: 20px 15px;
+}
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.footer-logo img {
+  width: 45px;
+  height: auto;
+}
+
+.footer-logo p {
+  font-size: 16px;
+  margin: 0;
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+
+.footer-column {
+  flex: 1;
+  min-width: 150px;
+  max-width: 100%;
+}
+
+.footer-column h3 {
+  font-size: 20px;
   text-transform: uppercase;
+  margin-bottom: 5px;
 }
 
-.card-title {
-  font-family: 'Karla', sans-serif;
-  font-size: 18pt;
-  font-weight: 700;
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
-.paragraph-text {
-  font-family: 'Karla', sans-serif;
-  font-size: 16pt;
-  line-height: 1.5;
-  max-width: 65ch;
+.footer-column ul li {
+  margin: 5px 0;
 }
 
-.highlight-text {
-  font-family: 'Karla', sans-serif;
-  font-size: 16pt;
-  font-weight: 500;
+.footer-column ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
-/* General Form Styling */
+.footer-column ul li a:hover {
+  color: #F4CE14;
+}
+
+.footer-column ul li i {
+  font-size: 18px;
+}
+
+/* Responsive Styles for Desktop */
+@media (min-width: 768px) {
+  .footer-content {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 20px;
+  }
+
+  .footer-links {
+    flex-direction: row;
+    gap: 20px;
+  }
+
+  .footer-column ul li a {
+    justify-content: flex-start;
+  }
+}
+
+/* Form Styles (Reverted to Original) */
 form {
-  max-width: 100%; /* Ensure the form doesn't exceed the screen width */
-  padding: 15px; /* Add padding for better spacing */
-  box-sizing: border-box; /* Include padding in the width calculation */
-  background-color: #EDEFEE; /* Background color from UI kit */
-  border-radius: 8px; /* Consistent border radius */
+  max-width: 100%;
+  padding: 15px;
+  box-sizing: border-box;
+  background-color: #EDEFEE;
+  border-radius: 8px;
 }
 
-/* Input and Label Styling */
 label {
-  display: block; /* Ensure labels are on their own line */
+  display: block;
   font-weight: bold;
   margin-bottom: 5px;
-  font-family: 'Karla', sans-serif; /* Use Karla font for labels */
-  font-size: 16pt; /* Match paragraph text size */
-  color: #333333; /* Text color from UI kit */
+  font-family: 'Karla', sans-serif;
+  font-size: 16pt;
+  color: #333333;
 }
 
 input,
 select,
 textarea {
-  width: 100%; /* Make inputs take up the full width */
+  width: 100%;
   padding: 10px;
   border: 1px solid #ccc;
-  border-radius: 4px; /* Consistent border radius for inputs */
-  font-size: 16pt; /* Match paragraph text size */
-  font-family: 'Karla', sans-serif; /* Use Karla font for inputs */
-  box-sizing: border-box; /* Include padding in the width calculation */
+  border-radius: 4px;
+  font-size: 16pt;
+  font-family: 'Karla', sans-serif;
+  box-sizing: border-box;
 }
 
 textarea {
   resize: vertical;
-  min-height: 100px; /* Minimum height for textarea */
+  min-height: 100px;
 }
 
-/* Flexbox and Grid Layout Adjustments */
 .name-group,
 .email-group,
 .guests-occasion-group,
@@ -102,104 +237,103 @@ textarea {
 .special-requirements-group,
 .button-group {
   display: flex;
-  flex-direction: column; /* Stack elements vertically by default */
-  gap: 15px; /* Add spacing between elements */
+  flex-direction: column;
+  gap: 15px;
   margin-bottom: 20px;
 }
 
-/* Email Group: Align email input and checkbox on the same row */
+/* Email Group */
 .email-group {
   display: flex;
-  align-items: flex-start; /* Align items to the start */
-  gap: 10px; /* Spacing between email input and checkbox */
+  align-items: flex-start;
+  gap: 10px;
 }
 
 .checkbox-group {
   display: flex;
   align-items: center;
   gap: 8px;
-  white-space: nowrap; /* Prevent text from wrapping */
+  white-space: nowrap;
 }
 
 .checkbox-group label {
-  font-size: 16pt; /* Match paragraph text size */
-  font-weight: normal; /* Normal weight for checkbox label */
+  font-size: 16pt;
+  font-weight: normal;
 }
 
-/* Guests Group: Align Adults and Children on the same row */
+/* Guests Group*/
 .guests-group {
-  display: flex; /* Use flexbox for horizontal alignment */
-  flex-direction: row; /* Align items horizontally */
-  gap: 20px; /* Add spacing between Adults and Children inputs */
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
 }
 
 .guests-group > div {
-  flex: 1; /* Ensure both fields take equal width */
+  flex: 1;
 }
 
-/* Date and Time Group: Align Date and Time on the same row */
+/* Date and Time Group*/
 .date-time-group {
   display: flex;
   flex-direction: row;
-  gap: 20px; /* Add spacing between Date and Time inputs */
+  gap: 20px;
 }
 
 .date-time-group > div {
-  flex: 1; /* Ensure both fields take equal width */
+  flex: 1;
 }
 
 /* Special Requirements Group */
 .special-requirements-group {
-  margin-bottom: 20px; /* Consistent spacing */
+  margin-bottom: 20px;
 }
 
 .special-requirements-group textarea {
   width: 100%;
   padding: 10px;
   border: 1px solid #ccc;
-  border-radius: 4px; /* Consistent border radius */
-  font-size: 16pt; /* Match paragraph text size */
-  font-family: 'Karla', sans-serif; /* Use Karla font */
-  resize: vertical; /* Allow vertical resizing */
+  border-radius: 4px;
+  font-size: 16pt;
+  font-family: 'Karla', sans-serif;
+  resize: vertical;
 }
 
-/* Button Group: Align buttons next to each other */
 .button-group {
   display: flex;
   flex-direction: row;
-  justify-content: space-between; /* Space out buttons */
+  justify-content: space-between;
   gap: 20px;
 }
 
 .button-group button {
-  flex: 1; /* Buttons take equal width */
+  flex: 1;
   padding: 10px 20px;
-  font-size: 16pt; /* Match paragraph text size */
-  font-family: 'Karla', sans-serif; /* Use Karla font */
-  font-weight: 500; /* Medium weight for buttons */
+  font-size: 16pt;
+  font-family: 'Karla', sans-serif;
+  font-weight: 500;
   border: none;
-  border-radius: 16px; /* Updated corner radius to 8px */
+  border-radius: 8px;
   cursor: pointer;
+  width: auto;
 }
 
 .button-primary {
-  background-color: #F4CE14; /* Yellow for primary buttons */
-  color: #333333; /* Dark text for contrast */
+  background-color: #F4CE14;
+  color: #333333;
 }
 
 .button-secondary {
-  background-color: #495E57; /* Green for secondary buttons */
-  color: white; /* White text for contrast */
+  background-color: #495E57;
+  color: white;
 }
 
 .button-primary:hover,
 .button-secondary:hover {
-  opacity: 0.9; /* Slight hover effect */
+  opacity: 0.9;
 }
 
 /* Responsive Design for Mobile Devices */
 @media (max-width: 768px) {
-  /* Ensure all input groups stack vertically */
   .name-group,
   .guests-occasion-group,
   .seating-time-group,
@@ -207,21 +341,155 @@ textarea {
     flex-direction: column;
   }
 
-  /* Adjust spacing for better readability */
   .name-group > div,
   .guests-group > div,
   .seating-time-group > div,
   .date-time-group > div {
-    width: 100%; /* Ensure full width for child elements */
+    width: 100%;
   }
 
-  /* Make buttons full width on mobile */
   .button-group {
     flex-direction: column;
     gap: 10px;
   }
 
   .button-group button {
-    width: 100%; /* Full-width buttons */
+    width: 100%;
+  }
+
+  .nav-bar ul {
+    padding: 0 15px;
+  }
+
+  .footer-content {
+    padding: 20px 15px;
+  }
+}
+
+/* Hero Card Styles */
+.hero-card {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    margin-top: 20px;
+}
+
+.carousel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.carousel-content {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+}
+
+.carousel-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* Hero Text Style */
+.hero-text {
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  transform: translateY(-50%);
+  color: white;
+  text-align: left;
+  max-width: 65ch;
+}
+
+.hero-text h2 {
+  font-family: 'Karla', sans-serif;
+  font-size: 18pt;
+  font-weight: bold;
+  color: #F4CE14;
+  margin: 0;
+}
+
+.hero-text p {
+  font-family: 'Karla', sans-serif;
+  font-size: 16pt;
+  color: white;
+  line-height: 1.5;
+  margin-top: 10px;
+}
+
+.cta-button {
+  background-color: #F4CE14;
+  color: #333333;
+  padding: 10px 20px;
+  font-size: 16pt;
+  font-family: 'Karla', sans-serif;
+  font-weight: 500;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #e3b50d;
+}
+
+/* Dot-style carousel indicators */
+.carousel-indicators {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+
+.carousel-indicator {
+  width: 10px;
+  height: 10px;
+  margin: 0 5px;
+  background-color: white;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.carousel-indicator.active {
+  background-color: #F4CE14;
+}
+
+.carousel-indicator:hover {
+  background-color: #F4CE14;
+}
+
+.carousel-button {
+  display: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .carousel-content {
+    height: 300px;
+  }
+
+  .hero-text h2 {
+    font-size: 24pt;
+  }
+
+  .hero-text p {
+    font-size: 14pt;
+  }
+
+  .cta-button {
+    font-size: 14pt;
+    padding: 8px 16px;
   }
 }

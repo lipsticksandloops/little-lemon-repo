@@ -18,10 +18,31 @@ export default function ReservationForm() {
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
-    setFormData({
-      ...formData,
-      [name]: type === 'checkbox' ? checked : value,
-    });
+
+    if (name === 'adults' || name === 'children') {
+      const updatedValue = parseInt(value, 10);
+
+      if (name === 'adults') {
+        if (updatedValue + formData.children <= 8) {
+          setFormData({
+            ...formData,
+            [name]: updatedValue,
+          });
+        }
+      } else if (name === 'children') {
+        if (updatedValue + formData.adults <= 8) {
+          setFormData({
+            ...formData,
+            [name]: updatedValue,
+          });
+        }
+      }
+    } else {
+      setFormData({
+        ...formData,
+        [name]: type === 'checkbox' ? checked : value,
+      });
+    }
   };
 
   const handleSubmit = (e) => {
@@ -47,7 +68,6 @@ export default function ReservationForm() {
 
   return (
     <form onSubmit={handleSubmit} className="reservation-form">
-      {/* Booking Details Section */}
       <h2 className="section-title">Booking Details</h2>
       <div className="name-group">
         <div>
@@ -97,10 +117,9 @@ export default function ReservationForm() {
           <label htmlFor="rememberMe" className="paragraph-text">Remember me</label>
         </div>
       </div>
-
-      {/* Reservation Details Section */}
       <h2 className="section-title">Reservation Details</h2>
       <div className="guests-occasion-group">
+        <label htmlFor="Number-of-guests" className="paragraph-text">Select number of guests:</label>
         <div className="guests-group">
           <div>
             <label htmlFor="adults" className="paragraph-text">Adults:</label>
@@ -179,8 +198,6 @@ export default function ReservationForm() {
           </select>
         </div>
       </div>
-
-      {/* Special Requirements Section */}
       <div className="special-requirements-group">
         <label htmlFor="specialRequests" className="paragraph-text">Special Requirements:</label>
         <textarea
@@ -193,8 +210,6 @@ export default function ReservationForm() {
           placeholder="Any special requests or comments..."
         ></textarea>
       </div>
-
-      {/* Buttons */}
       <div className="button-group">
         <button type="button" onClick={handleClear} className="button-secondary">
           Clear

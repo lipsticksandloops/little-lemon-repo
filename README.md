@@ -1,8 +1,15 @@
-# React + Vite
+# 🍋 Reserve a Table at Little Lemon Restaurant 🍽️
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 📋 Project Description
+Welcome to the **Reserve a Table** app for Little Lemon Restaurant! This project solves a common issue: customers couldn't find the "Reserve a Table" link on the website. With this new feature, customers can easily book a table for special occasions with family and friends, saving them time and avoiding stressful phone calls! 😅
 
-Currently, two official plugins are available:
+## 💻 Technologies Used
+- **React** (HTML, CSS, JavaScript)
+- **Responsive Design** for a seamless mobile experience 📱
+- **Modern UI/UX techniques** for an intuitive user interface 😎
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 How to Use
+1. Clone the repository.
+2. Install dependencies by running:
+   ```bash
+   npm install

@@ -1,7 +1,11 @@
+/* ==================== */
 /* Import Fonts */
+/* ==================== */
 @import url('https://fonts.googleapis.com/css2?family=Markazi+Text:wght@400;500&family=Karla:wght@400;500;700&display=swap');
 
+/* ==================== */
 /* Global Styles */
+/* ==================== */
 body {
   font-family: 'Karla', sans-serif;
   color: #333333;
@@ -25,7 +29,9 @@ h2 {
   font-weight: 400;
 }
 
-/* Header Styles */
+/* ==================== */
+/* Header Section */
+/* ==================== */
 .header {
   background-color: #495E57;
   color: white;
@@ -34,12 +40,11 @@ h2 {
   padding: 0;
 }
 
-/* Row 1: Reserve a table CTA */
 .header-cta {
   background-color: #495E57;
   color: white;
   text-align: center;
-  height: 40px;
+  height: 50px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -54,10 +59,12 @@ h2 {
   margin: 0;
 }
 
-/* Row 2: Navigation bar */
+/* ==================== */
+/* Navigation Bar */
+/* ==================== */
 .nav-bar {
   background-color: white;
-  height: 80px;
+  height: 100px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -74,7 +81,6 @@ h2 {
   padding: 0 15px;
   margin: 0;
   width: 100%;
-  max-width: none;
 }
 
 .nav-bar ul li {
@@ -82,20 +88,267 @@ h2 {
 }
 
 .nav-bar ul li img {
-  height: 40px;
+  height: 50px;
 }
 
-/* Bootstrap icons */
 .nav-bar ul li i {
   color: #495E57;
-  font-size: 24px;
+  font-size: 30px;
 }
 
 .nav-bar ul li i:hover {
   color: #F4CE14;
 }
 
-/* Footer Styles */
+/* ==================== */
+/* Hero Section */
+/* ==================== */
+.hero-card {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.carousel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.carousel-content {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  overflow: hidden;
+}
+
+.carousel-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0px;
+}
+
+.hero-text {
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  transform: translateY(-50%);
+  color: white;
+  text-align: left;
+  max-width: 35ch;
+}
+
+.hero-text h2 {
+  font-family: 'Karla', sans-serif;
+  font-size: 18pt;
+  font-weight: bold;
+  color: #F4CE14;
+  margin: 0;
+}
+
+.hero-text p {
+  font-family: 'Karla', sans-serif;
+  font-size: 16pt;
+  color: white;
+  line-height: 1.5;
+  margin-top: 10px;
+}
+
+.cta-button {
+  background-color: #F4CE14;
+  color: #333333;
+  padding: 10px 20px;
+  font-size: 16pt;
+  font-family: 'Karla', sans-serif;
+  font-weight: 500;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #e3b50d;
+}
+
+.carousel-indicators {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+
+.carousel-indicator {
+  width: 10px;
+  height: 10px;
+  margin: 0 5px;
+  background-color: white;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.carousel-indicator.active {
+  background-color: #F4CE14;
+}
+
+.carousel-indicator:hover {
+  background-color: #F4CE14;
+}
+
+.carousel-button {
+  display: none;
+}
+
+/* ==================== */
+/* BookingForm Component */
+/* ==================== */
+form {
+  display: grid;
+  max-width: 100%;
+  padding: 15px;
+  box-sizing: border-box;
+  background-color: #EDEFEE;
+  border-radius: 8px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+  font-family: 'Karla', sans-serif;
+  font-size: 16pt;
+  color: #333333;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16pt;
+  font-family: 'Karla', sans-serif;
+  box-sizing: border-box;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.name-group,
+.email-group,
+.guests-occasion-group,
+.seating-time-group,
+.date-group,
+.special-requirements-group,
+.button-group {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.email-group {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.checkbox-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+}
+
+.checkbox-group label {
+  font-size: 16pt;
+  font-weight: normal;
+}
+
+.guests-group {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.guests-group > div {
+  flex: 1;
+}
+
+.date-time-group {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.date-time-group > div {
+  flex: 1;
+}
+
+.special-requirements-group {
+  margin-bottom: 20px;
+}
+
+.special-requirements-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16pt;
+  font-family: 'Karla', sans-serif;
+  resize: vertical;
+}
+
+.button-group {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.button-group button {
+  flex: 1;
+  padding: 10px 20px;
+  font-size: 16pt;
+  font-family: 'Karla', sans-serif;
+  font-weight: 500;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  width: auto;
+}
+
+.button-primary {
+  background-color: #F4CE14;
+  color: #333333;
+}
+
+.button-secondary {
+  background-color: #495E57;
+  color: white;
+}
+
+.button-primary:hover,
+.button-secondary:hover {
+  opacity: 0.9;
+}
+
+/* ==================== */
+/* Footer Section */
+/* ==================== */
 .footer {
   background-color: #495E57;
   color: white;
@@ -178,6 +431,7 @@ h2 {
 /* Responsive Styles for Desktop */
 @media (min-width: 768px) {
   .footer-content {
+    display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-start;
@@ -194,287 +448,9 @@ h2 {
   }
 }
 
-/* Form Styles (Reverted to Original) */
-form {
-  max-width: 100%;
-  padding: 15px;
-  box-sizing: border-box;
-  background-color: #EDEFEE;
-  border-radius: 8px;
-}
-
-label {
-  display: block;
-  font-weight: bold;
-  margin-bottom: 5px;
-  font-family: 'Karla', sans-serif;
-  font-size: 16pt;
-  color: #333333;
-}
-
-input,
-select,
-textarea {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  font-size: 16pt;
-  font-family: 'Karla', sans-serif;
-  box-sizing: border-box;
-}
-
-textarea {
-  resize: vertical;
-  min-height: 100px;
-}
-
-.name-group,
-.email-group,
-.guests-occasion-group,
-.seating-time-group,
-.date-group,
-.special-requirements-group,
-.button-group {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  margin-bottom: 20px;
-}
-
-/* Email Group */
-.email-group {
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-}
-
-.checkbox-group {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  white-space: nowrap;
-}
-
-.checkbox-group label {
-  font-size: 16pt;
-  font-weight: normal;
-}
-
-/* Guests Group*/
-.guests-group {
-  display: flex;
-  flex-direction: row;
-  gap: 20px;
-}
-
-.guests-group > div {
-  flex: 1;
-}
-
-/* Date and Time Group*/
-.date-time-group {
-  display: flex;
-  flex-direction: row;
-  gap: 20px;
-}
-
-.date-time-group > div {
-  flex: 1;
-}
-
-/* Special Requirements Group */
-.special-requirements-group {
-  margin-bottom: 20px;
-}
-
-.special-requirements-group textarea {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  font-size: 16pt;
-  font-family: 'Karla', sans-serif;
-  resize: vertical;
-}
-
-.button-group {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  gap: 20px;
-}
-
-.button-group button {
-  flex: 1;
-  padding: 10px 20px;
-  font-size: 16pt;
-  font-family: 'Karla', sans-serif;
-  font-weight: 500;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  width: auto;
-}
-
-.button-primary {
-  background-color: #F4CE14;
-  color: #333333;
-}
-
-.button-secondary {
-  background-color: #495E57;
-  color: white;
-}
-
-.button-primary:hover,
-.button-secondary:hover {
-  opacity: 0.9;
-}
-
-/* Responsive Design for Mobile Devices */
-@media (max-width: 768px) {
-  .name-group,
-  .guests-occasion-group,
-  .seating-time-group,
-  .date-time-group {
-    flex-direction: column;
-  }
-
-  .name-group > div,
-  .guests-group > div,
-  .seating-time-group > div,
-  .date-time-group > div {
-    width: 100%;
-  }
-
-  .button-group {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .button-group button {
-    width: 100%;
-  }
-
-  .nav-bar ul {
-    padding: 0 15px;
-  }
-
-  .footer-content {
-    padding: 20px 15px;
-  }
-}
-
-/* Hero Card Styles */
-.hero-card {
-    width: 100%;
-    overflow: hidden;
-    position: relative;
-    margin-top: 20px;
-}
-
-.carousel {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-}
-
-.carousel-content {
-  position: relative;
-  width: 100%;
-  height: 400px;
-  overflow: hidden;
-}
-
-.carousel-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 8px;
-}
-
-/* Hero Text Style */
-.hero-text {
-  position: absolute;
-  top: 50%;
-  left: 20px;
-  transform: translateY(-50%);
-  color: white;
-  text-align: left;
-  max-width: 65ch;
-}
-
-.hero-text h2 {
-  font-family: 'Karla', sans-serif;
-  font-size: 18pt;
-  font-weight: bold;
-  color: #F4CE14;
-  margin: 0;
-}
-
-.hero-text p {
-  font-family: 'Karla', sans-serif;
-  font-size: 16pt;
-  color: white;
-  line-height: 1.5;
-  margin-top: 10px;
-}
-
-.cta-button {
-  background-color: #F4CE14;
-  color: #333333;
-  padding: 10px 20px;
-  font-size: 16pt;
-  font-family: 'Karla', sans-serif;
-  font-weight: 500;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  margin-top: 10px;
-  transition: background-color 0.3s ease;
-}
-
-.cta-button:hover {
-  background-color: #e3b50d;
-}
-
-/* Dot-style carousel indicators */
-.carousel-indicators {
-  position: absolute;
-  bottom: 10px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1;
-}
-
-.carousel-indicator {
-  width: 10px;
-  height: 10px;
-  margin: 0 5px;
-  background-color: white;
-  border-radius: 50%;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.carousel-indicator.active {
-  background-color: #F4CE14;
-}
-
-.carousel-indicator:hover {
-  background-color: #F4CE14;
-}
-
-.carousel-button {
-  display: none;
-}
-
+/* ==================== */
 /* Responsive Design */
+/* ==================== */
 @media (max-width: 768px) {
   .carousel-content {
     height: 300px;
@@ -492,4 +468,64 @@ textarea {
     font-size: 14pt;
     padding: 8px 16px;
   }
+
+  .button-group {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .button-group button {
+    width: 100%;
+  }
+
+  .name-group,
+  .guests-occasion-group,
+  .seating-time-group,
+  .date-time-group {
+    flex-direction: column;
+  }
+
+  .name-group > div,
+  .guests-group > div,
+  .seating-time-group > div,
+  .date-time-group > div {
+    width: 100%;
+  }
+
+  .footer-content {
+    padding: 20px 15px;
+  }
+
+  .nav-bar ul {
+    padding: 0 15px;
+  }
+}
+
+/* ==================== */
+/* Number Input Group */
+/* ==================== */
+.number-input-group {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.number-input-button {
+  background-color: #495E57;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 15px;
+  font-size: 16pt;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.number-input-button:hover {
+  background-color: #F4CE14;
+}
+
+.number-input {
+  width: 60px;
+  text-align: center;
 }

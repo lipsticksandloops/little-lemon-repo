@@ -215,7 +215,7 @@ export default function ReservationForm() {
           Clear
         </button>
         <button type="submit" className="button-primary">
-          Next
+          Submit
         </button>
       </div>
     </form>

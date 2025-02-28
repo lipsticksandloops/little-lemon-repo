@@ -8,15 +8,15 @@ export default function Header() {
       <div className="header-cta">
         <p className="lead-text">Reserve a table now!</p>
       </div>
-      <nav className="nav-bar">
+      <nav className="nav-bar" aria-label="Main Navigation">
         <ul>
-          <li><i className="bi bi-list"></i></li>
-          <li><i className="bi bi-geo-alt-fill"></i></li>
+          <li><i className="bi bi-list" aria-hidden="true"></i></li>
+          <li><i className="bi bi-geo-alt-fill" aria-hidden="true"></i></li>
           <li>
             <img src={logo} alt="Little Lemon Logo" className="nav-logo" />
           </li>
-          <li><i className="bi bi-person-fill"></i></li>
-          <li><i className="bi bi-bag"></i></li>
+          <li><i className="bi bi-person-fill" aria-hidden="true"></i></li>
+          <li><i className="bi bi-bag" aria-hidden="true"></i></li>
         </ul>
       </nav>
     </header>

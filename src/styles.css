@@ -36,6 +36,7 @@ h2 {
   background-color: #495E57;
   color: white;
   width: 100%;
+  height: auto;
   margin: 0;
   padding: 0;
 }
@@ -353,14 +354,16 @@ textarea {
   background-color: #495E57;
   color: white;
   width: 100%;
+  height: ;
   margin: 0;
   padding: 0;
 }
 
 .footer-content {
-  display: flex;
+  display: grid;
   flex-direction: column;
-  gap: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
   max-width: 100%;
   margin: 0;
   padding: 20px 15px;
@@ -373,7 +376,7 @@ textarea {
 }
 
 .footer-logo img {
-  width: 45px;
+  width: 80px;
   height: auto;
 }
 
@@ -434,7 +437,7 @@ textarea {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items:center ;
     padding: 20px;
   }
 

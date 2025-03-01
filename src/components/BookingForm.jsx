@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles.css";
+import "./styles.css";
 
 export default function BookingForm({
   formData,
@@ -8,7 +8,6 @@ export default function BookingForm({
   handleClear,
   availableTimes,
 }) {
-  // Function to handle incrementing adults or children
   const handleIncrement = (field) => {
     const value = formData[field];
     if (field === "adults" && value < 8) {
@@ -18,7 +17,6 @@ export default function BookingForm({
     }
   };
 
-  // Function to handle decrementing adults or children
   const handleDecrement = (field) => {
     const value = formData[field];
     if (field === "adults" && value > 1) {
@@ -29,7 +27,7 @@ export default function BookingForm({
   };
 
   return (
-    <form onSubmit={handleSubmit} className="reservation-form">
+    <form onSubmit={handleSubmit} className="reservation-form" data-testid="booking-form">
       <h2 className="section-title">Booking Details</h2>
       <div className="name-group">
         <div>
@@ -43,6 +41,7 @@ export default function BookingForm({
             required
             className="input-field"
             aria-label="First Name"
+            data-testid="first-name-input"
           />
         </div>
         <div>
@@ -56,6 +55,7 @@ export default function BookingForm({
             required
             className="input-field"
             aria-label="Last Name"
+            data-testid="last-name-input"
           />
         </div>
       </div>
@@ -71,6 +71,7 @@ export default function BookingForm({
           required
           className="input-field"
           aria-label="Email Address"
+          data-testid="email-input"
         />
         <div className="checkbox-group">
           <input
@@ -79,6 +80,7 @@ export default function BookingForm({
             checked={formData.rememberMe}
             onChange={handleChange}
             aria-label="Remember Me"
+            data-testid="remember-me-checkbox"
           />
           <label htmlFor="rememberMe" className="paragraph-text">Remember me</label>
         </div>
@@ -96,6 +98,7 @@ export default function BookingForm({
                 onClick={() => handleDecrement("adults")}
                 className="number-input-button"
                 aria-label="Decrease Adults"
+                data-testid="decrease-adults-button"
               >
                 -
               </button>
@@ -110,12 +113,14 @@ export default function BookingForm({
                 required
                 className="input-field number-input"
                 aria-label="Number of Adults"
+                data-testid="adults-input"
               />
               <button
                 type="button"
                 onClick={() => handleIncrement("adults")}
                 className="number-input-button"
                 aria-label="Increase Adults"
+                data-testid="increase-adults-button"
               >
                 +
               </button>
@@ -129,6 +134,7 @@ export default function BookingForm({
                 onClick={() => handleDecrement("children")}
                 className="number-input-button"
                 aria-label="Decrease Children"
+                data-testid="decrease-children-button"
               >
                 -
               </button>
@@ -143,12 +149,14 @@ export default function BookingForm({
                 required
                 className="input-field number-input"
                 aria-label="Number of Children"
+                data-testid="children-input"
               />
               <button
                 type="button"
                 onClick={() => handleIncrement("children")}
                 className="number-input-button"
                 aria-label="Increase Children"
+                data-testid="increase-children-button"
               >
                 +
               </button>
@@ -169,6 +177,7 @@ export default function BookingForm({
             required
             className="input-field"
             aria-label="Select Date"
+            data-testid="date-input"
           />
         </div>
         <div>
@@ -181,10 +190,11 @@ export default function BookingForm({
             required
             className="input-field"
             aria-label="Select Time"
+            data-testid="time-select"
           >
             <option value="">Select a time</option>
             {availableTimes.map((time) => (
-              <option key={time} value={time}>
+              <option key={time} value={time} data-testid="time-option">
                 {time}
               </option>
             ))}
@@ -201,6 +211,7 @@ export default function BookingForm({
           onChange={handleChange}
           className="input-field"
           aria-label="Select Occasion"
+          data-testid="occasion-select"
         >
           <option value="">Select an occasion</option>
           <option value="anniversary">Anniversary</option>
@@ -221,6 +232,7 @@ export default function BookingForm({
           rows="4"
           placeholder="Any special requests or comments..."
           aria-label="Special Requirements"
+          data-testid="special-requests-textarea"
         ></textarea>
       </div>
 
@@ -230,6 +242,7 @@ export default function BookingForm({
           onClick={handleClear}
           className="button-secondary"
           aria-label="Clear Form"
+          data-testid="clear-button"
         >
           Clear
         </button>
@@ -237,6 +250,7 @@ export default function BookingForm({
           type="submit"
           className="button-primary"
           aria-label="Submit Reservation"
+          data-testid="submit-button"
         >
           Submit
         </button>

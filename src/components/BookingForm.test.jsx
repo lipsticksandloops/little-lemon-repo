@@ -2,6 +2,11 @@ import React from "react";
 import { render, screen, fireEvent } from "@testing-library/react";
 import BookingForm from "./BookingForm";
 
+global.fetchAPI = jest.fn(() => ["17:00", "18:00", "19:00"]);
+global.submitAPI = jest.fn(() => true);
+
+global.alert = jest.fn();
+
 test("renders BookingForm component", () => {
   const mockFormData = {
     firstName: "",
@@ -27,19 +32,19 @@ test("renders BookingForm component", () => {
     />
   );
 
-  // test to check if the form is rendered
+  // Test to check if the form is rendered
   const formElement = screen.getByTestId("booking-form");
   expect(formElement).toBeInTheDocument();
 
-  // test to check if the "Booking Details" heading is rendered
+  // Test to check if the "Booking Details" heading is rendered
   const heading = screen.getByText(/Booking Details/i);
   expect(heading).toBeInTheDocument();
 
-  // test to check if the first name input is rendered
+  // Test to check if the first name input is rendered
   const firstNameInput = screen.getByTestId("first-name-input");
   expect(firstNameInput).toBeInTheDocument();
 
-  // test to check if the submit button is rendered
+  // Test to check if the submit button is rendered
   const submitButton = screen.getByTestId("submit-button");
   expect(submitButton).toBeInTheDocument();
 });
@@ -107,4 +112,31 @@ test("submits the form when the submit button is clicked", () => {
 
   // Check if the handleSubmit was called
   expect(mockHandleSubmit).toHaveBeenCalled();
+
+  // Check if window.alert was called with the correct message
+  expect(global.alert).toHaveBeenCalledWith("Booking successful!");
+});
+
+test("updates available times when the date changes", () => {
+  const mockFormData = {
+    date: "2023-10-01",
+  };
+  const mockHandleChange = jest.fn();
+
+  render(
+    <BookingForm
+      formData={mockFormData}
+      handleChange={mockHandleChange}
+      handleSubmit={jest.fn()}
+      handleClear={jest.fn()}
+    />
+  );
+
+  // Simulate a date change
+  const dateInput = screen.getByTestId("date-input");
+  fireEvent.change(dateInput, { target: { value: "2023-10-01" } });
+
+  // Verify if the available times are updated
+  const timeOptions = screen.getAllByTestId("time-option");
+  expect(timeOptions.length).toBeGreaterThan(0);
 });

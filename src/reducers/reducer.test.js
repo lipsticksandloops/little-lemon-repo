@@ -1,7 +1,9 @@
 import { initializeTimes, updateTimes } from './timesReducer';
 
+global.fetchAPI = jest.fn(() => ["17:00", "18:00", "19:00"]);
+
 test('initializeTimes returns the correct expected value', () => {
-  const expectedTimes = ["17:00", "18:00", "19:00", "20:00", "21:00"];
+  const expectedTimes = ["17:00", "18:00", "19:00"];
   const result = initializeTimes();
   expect(result).toEqual(expectedTimes);
 });

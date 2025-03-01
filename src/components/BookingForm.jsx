@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useReducer, useEffect } from "react";
+import { initializeTimes, updateTimes } from "../reducers/timesReducer";
 import "./styles.css";
 
 export default function BookingForm({
@@ -6,8 +7,30 @@ export default function BookingForm({
   handleChange,
   handleSubmit,
   handleClear,
-  availableTimes,
 }) {
+  const [availableTimes, dispatch] = useReducer(updateTimes, [], initializeTimes);
+
+  useEffect(() => {
+    if (formData.date) {
+      const times = window.fetchAPI(new Date(formData.date));
+      dispatch({ type: "UPDATE_TIMES", payload: times });
+    }
+  }, [formData.date]);
+
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+
+    handleSubmit(e);
+
+    const isSubmitted = window.submitAPI(formData);
+
+    if (isSubmitted) {
+      alert("Booking successful!");
+    } else {
+      alert("Booking failed. Please try again.");
+    }
+  };
+
   const handleIncrement = (field) => {
     const value = formData[field];
     if (field === "adults" && value < 8) {
@@ -27,7 +50,7 @@ export default function BookingForm({
   };
 
   return (
-    <form onSubmit={handleSubmit} className="reservation-form" data-testid="booking-form">
+    <form onSubmit={handleFormSubmit} className="reservation-form" data-testid="booking-form">
       <h2 className="section-title">Booking Details</h2>
       <div className="name-group">
         <div>
